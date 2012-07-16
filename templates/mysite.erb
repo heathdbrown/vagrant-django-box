@@ -1,0 +1,8 @@
+# Taken from https://gist.github.com/701221
+<VirtualHost *:80>
+	DocumentRoot /usr/local/share/wsgi/mysite/media
+	Alias /media /usr/local/share/wsgi/mysite/media
+	WSGIScriptAlias / /usr/local/share/wsgi/mysite/mysite.wsgi
+	WSGIDaemonProcess mysite processes=<%= processorcount %>
+	WSGIProcessGroup mysite
+</VirtualHost>
